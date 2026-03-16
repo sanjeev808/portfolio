@@ -1,0 +1,265 @@
+/* ======================================
+   DESIGN SYSTEM – Sanjeev Maurya Portfolio
+   Color palette: Dark green / mint / white
+   ====================================== */
+
+:root {
+  /* Primary Green Palette */
+  --clr-primary: #1a5c4a;
+  --clr-primary-dark: #0f3d31;
+  --clr-primary-light: #2a7a61;
+  --clr-accent: #4ecda4;
+  --clr-accent-light: #a8f0d9;
+  --clr-mint: #d4f5ea;
+
+  /* Neutral */
+  --clr-bg: #f8fdfb;
+  --clr-bg-card: #ffffff;
+  --clr-bg-dark: #0a2218;
+  --clr-text: #1a2e28;
+  --clr-text-muted: #627d74;
+  --clr-border: #d0e8df;
+
+  /* Gradients */
+  --grad-hero: linear-gradient(135deg, #0f3d31 0%, #1a5c4a 40%, #2a7a61 100%);
+  --grad-card: linear-gradient(145deg, #ffffff 0%, #f0fbf6 100%);
+  --grad-accent: linear-gradient(135deg, #4ecda4, #1a5c4a);
+
+  /* Typography */
+  --font-body: 'Inter', sans-serif;
+  --font-display: 'Space Grotesk', sans-serif;
+
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+  --space-2xl: 6rem;
+
+  /* Effects */
+  --shadow-sm: 0 2px 8px rgba(26, 92, 74, 0.08);
+  --shadow-md: 0 8px 24px rgba(26, 92, 74, 0.12);
+  --shadow-lg: 0 16px 48px rgba(26, 92, 74, 0.18);
+  --shadow-glow: 0 0 32px rgba(78, 205, 164, 0.25);
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===== RESET ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--clr-bg);
+  color: var(--clr-text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+input,
+textarea {
+  font-family: inherit;
+}
+
+/* ===== UTILITIES ===== */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+.section {
+  padding: var(--space-2xl) 0;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--clr-primary-dark);
+  margin-bottom: var(--space-xs);
+}
+
+.section-subtitle {
+  color: var(--clr-text-muted);
+  font-size: 1.1rem;
+  margin-bottom: var(--space-lg);
+}
+
+.section-header {
+  margin-bottom: var(--space-lg);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 1rem;
+  background: var(--clr-mint);
+  color: var(--clr-primary);
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-sm);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  border-radius: var(--radius-full);
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--grad-accent);
+  color: #fff;
+  box-shadow: var(--shadow-md);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg), var(--shadow-glow);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--clr-primary);
+  border: 2px solid var(--clr-primary);
+}
+
+.btn-outline:hover {
+  background: var(--clr-primary);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.btn-ghost {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(8px);
+}
+
+.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--clr-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--clr-accent);
+  border-radius: var(--radius-full);
+}
+
+/* ===== SHARED SUB-PAGE STYLES ===== */
+.page-wrapper {
+  /* No top padding here so hero background extends to top under navbar */
+}
+
+.page-hero {
+  position: relative;
+  background: var(--grad-hero);
+  padding: 6rem 0 3.5rem;
+  /* Increased top padding for content, background covers all */
+  overflow: hidden;
+  text-align: center;
+}
+
+.page-hero__bg {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+
+.page-hero__inner {
+  position: relative;
+  z-index: 1;
+}
+
+.page-hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 0.75rem;
+}
+
+.page-hero__desc {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.1rem;
+}
+
+/* ===== SELECTION ===== */
+::selection {
+  background: var(--clr-accent);
+  color: var(--clr-primary-dark);
+}
+
+/* Custom Cursor Helpers */
+@media (min-width: 1025px) {
+
+  html,
+  body,
+  * {
+    cursor: none !important;
+  }
+}
+
+.cursor-hover {
+  cursor: none !important;
+}
